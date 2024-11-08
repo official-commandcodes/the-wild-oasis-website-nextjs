@@ -1,7 +1,9 @@
 import Image from "next/image";
 
-import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
+
+import { getCabin, getCabins } from "@/app/_lib/data-service";
+import TextExpander from "@/app/_components/TextExpander";
 
 // PLACEHOLDER DATA
 const cabin = {
@@ -44,7 +46,9 @@ export default async function Page({ params: { cabinId } }) {
         <div>
           <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">Cabin {name}</h3>
 
-          <p className="text-lg text-primary-300 mb-10">{description}</p>
+          <p className="text-lg text-primary-300 mb-10">
+            <TextExpander>{description}</TextExpander>
+          </p>
 
           <ul className="flex flex-col gap-4 mb-7">
             <li className="flex gap-3 items-center">
